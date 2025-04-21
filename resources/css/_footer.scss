@@ -1,0 +1,66 @@
+.footer_container{
+    background: $text-color;
+
+    .footer_content{
+        @include grid(3);
+        padding: 0.5em 0.9em;
+
+        p,h3{
+            color: $background-color;
+            padding: 0.2em 0;
+        }
+    
+        .footer_infor{
+            img{
+                border-radius: 50%;
+            }
+        }
+    
+        .footer_links{
+            .links{
+                @include flex_center;
+                flex-direction: column;
+                justify-content: left;
+                align-items: unset;
+                gap: 0.3em;
+                padding: 0.3em;
+    
+                a{
+                    @include anchor;
+                    color: $background-color;
+    
+                    &:hover{
+                        color: $accent-color;
+                    }
+                }
+            }
+        }
+    
+        .footer_social{
+            .social_media{
+                @include flex_center;
+                justify-content: left;
+                gap: 0.9em;
+                padding: 0.5em 0;
+        
+                a{
+                    img{
+                        width:28px ;
+                        height: 28px;
+                    }
+                }
+            }
+        }
+      
+    }
+   
+    .copyright{
+        padding: 0.2em 0;
+        text-align: center;
+        color: $background-color;
+    }
+}
+
+
+
+

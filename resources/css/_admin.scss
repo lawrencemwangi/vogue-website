@@ -1,0 +1,112 @@
+.admin_container{
+    display: flex;
+
+    .lastseen_details{
+        p{
+            font-size: 1.1em;
+            padding: 0.2em 0; 
+        }
+    }
+
+    .dashboard_infor{
+        width: calc(100% - $asidenav_width);
+        padding-left: 0.9em;
+
+        .admin_dashboard{
+            @include grid(5);
+            gap: 0.9em;
+
+            .admin_items{
+                @include flex_center;
+                gap: 1em;
+                background: $text-color;
+                padding: 0.4em;
+                border-radius: 16px;
+                color: $background-color;
+
+                i,p,span{
+                    font-size: 1.1em;
+                }
+
+                span{
+                    @include flex_center;
+                }
+            }
+        }
+
+        .clients_analytics{
+            padding: 0.2em 0;
+            background: $background-color;
+            color: $text-color;
+            padding: 0.5em;
+            border-radius: 12px;
+
+            h2{
+                padding-bottom: 0.3em;
+                text-decoration: underline;
+            }
+            
+            li{
+                list-style: none;
+                padding: 0.3em  0;  
+                @include grid(3);
+                padding: 0.2em;
+            }
+
+            .line{
+                border: unset;
+                font-weight: bold;
+                background: $background-color;
+                color: $text-color;
+                padding: 0.2em;
+                border-radius: 4px;
+            }
+
+            .details{
+                border-bottom: 1px solid $text-color;
+
+                span{
+                    &:nth-last-child(3){
+                        font-size: 0.85em;
+                    }
+                }
+            }
+        }
+
+        ul{
+            list-style: none;
+            padding: 1.2em 0.3em;
+            border-radius: 12px;
+
+            li{
+                padding: 0.5em 0;
+                border-bottom: 1px solid $text-color !important;
+                font-size: 1.1em;
+                color: $text-color;
+
+                span{
+                    &:nth-last-of-type(1){
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .charts{
+            padding: 1.5em 0.5em;
+
+            h2{
+                text-decoration: underline;
+            }
+            
+            .chart{
+                padding: 0.8em;
+                height:55vh;
+                width:60%;
+                background:$background-color;
+                border-radius: 12px;
+                color: $text-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+//golbal styles
+@import 'variables';
+@import 'mixin';
+@import 'global';
+@import 'messages';
+
+
+//partials styles
+@import 'navbar';
+@import 'form';
+@import 'footer';
+@import 'admin_aside';
+@import 'admin';
+@import 'list';
+
+
+//main Styles
+@import 'home';
+@import 'contact';
+@import 'about';
+@import 'shop';
+@import 'cart';

@@ -1,0 +1,58 @@
+.home_container{
+    .hero_container{
+        background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3))
+                            ,url('/public/assets/images/img3.jpg');
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position:inherit;
+        height: 90vh;
+
+        .hero_content{
+            @include flex_center;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            h1{
+                color: $background-color;
+                padding-bottom: 0.9em;
+            }
+
+            .button{
+                border: none;
+                padding: 0.6em 1.5em;
+                border-radius: 8px;
+                font-size: 1.1em;
+                background: $text-color;
+                cursor: pointer;
+                font-weight: 550;
+                
+                a{
+                    @include anchor;
+                    color:$background-color;                    
+                }
+            }
+        }
+    }    
+}
+
+
+@media screen and (width <=726px) {
+    .home_container{
+        .hero_container{
+            height: 50vh;
+    
+            .hero_content{
+                top: 32%;
+                left: 50%;
+                width: 90%;
+
+                h1{
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+}

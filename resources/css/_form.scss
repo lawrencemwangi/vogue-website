@@ -1,0 +1,144 @@
+form{
+    input,
+    textarea,
+    select{
+        padding: 0.5em 0.9em;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid gray;
+        margin: 0.5em 0;
+        font-size: 0.9em;
+    }
+
+    button{
+        border: none;
+        padding: 0.4em 1.5em;
+        border-radius: 8px;
+        font-size: 1.1em;
+        color:$background-color;
+        background: $accent-color;
+        cursor: pointer;
+        font-weight: 550;
+    }
+
+    .group{
+        @include grid(2);
+    }
+    
+    .custom_radio_buttons {
+        display: flex;
+
+        label {
+            padding: 0.3em 0.2em;
+            margin: 0.5em 0;
+            position: relative;
+            cursor: pointer;
+            width: 30%;
+            display: flex;
+            align-items: center;
+
+            .option_radio {
+                position: relative;
+                margin: 0 0.1em 0 0;
+                cursor: pointer;
+                appearance: none;
+                width: auto;
+                border: unset;
+            }
+
+            .option_radio:before {
+                -webkit-transition: -webkit-transform 0.4s
+                    cubic-bezier(0.45, 1.8, 0.5, 0.75);
+                -moz-transition: -moz-transform 0.4s
+                    cubic-bezier(0.45, 1.8, 0.5, 0.75);
+                transition: transform 0.4s
+                    cubic-bezier(0.45, 1.8, 0.5, 0.75);
+                -webkit-transform: scale(0, 0);
+                -moz-transform: scale(0, 0);
+                -ms-transform: scale(0, 0);
+                -o-transform: scale(0, 0);
+                transform: scale(0, 0);
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0.125rem;
+                z-index: 1;
+                width: 0.75rem;
+                height: 0.75rem;
+                background: #16a085;
+                border-radius: 50%;
+            }
+
+            .option_radio:checked:before {
+                -webkit-transform: scale(1, 1);
+                -moz-transform: scale(1, 1);
+                -ms-transform: scale(1, 1);
+                -o-transform: scale(1, 1);
+                transform: scale(1, 1);
+            }
+
+            .option_radio:after {
+                content: "";
+                position: absolute;
+                top: -0.25rem;
+                left: -0.125rem;
+                width: 1rem;
+                height: 1rem;
+                background: #fff;
+                border: 2px solid #d6d6d6;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.authentication_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%; 
+    
+    form{
+        width: 35%;
+        padding:0.6em 1.2em;
+        border-radius: 16px;
+        box-shadow: 2px 2px 3px $text-color;
+        background-color: $background-color;
+
+        p{
+            padding: 0.9em 0;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .input_group{
+            padding: 0.3em 0;
+            width: 100%;
+            margin: 0 0 0.3em;
+            color:$text-color;
+
+            input{
+                margin: 0.5em 0;
+            }
+        }
+
+        label {
+            font-weight: 500;
+            padding: 0.5em 0;
+            font-size: 0.95em;          
+        }
+    }
+}
+
+
+@media screen and (width <=726px) {
+    .authentication_container{
+        form{
+            width: 85%;
+
+        }
+    }
+}

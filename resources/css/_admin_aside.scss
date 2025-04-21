@@ -1,0 +1,107 @@
+$asidenav_width:15%;
+
+.aside_container{
+    height: 100vh;
+    position:sticky;
+    top:0;
+    left: 0;
+    padding: 0.5em;
+    border-right: 2px solid $accent-color;
+
+    .aside_logo{
+        @include flex_center;
+        justify-content: left;
+        flex-direction: row;
+        gap:0.5em;
+        margin-bottom: 1.2em;
+
+        img{
+            border-radius: 50%;
+        }
+
+        a{
+            font-size: 1.12em;
+            text-decoration: none;
+            color:$text-color;
+            font-weight: bold;
+        }
+    }
+
+    .aside_links{
+        ul{
+            list-style: none;
+
+            li{
+                padding: 0.3em 0;
+                border-bottom: 1.3px solid #444444;
+
+                a{
+                    @include flex_center;
+                    justify-content: left;
+                    flex-direction: row;
+                    gap:0.5em; 
+                    font-weight: 550;
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    color:$text-color;
+                    font-size: 1em;
+                }
+            }
+        }
+
+    }
+
+    .user{
+        @include flex_center;
+        flex-direction: column;
+        align-items: center;
+        margin: 9em 0;
+        text-align: center;
+
+        .image{
+            margin: 0 0 0.5em;
+
+            img{
+            $image_size: 60px;
+            width: $image_size;
+            height: $image_size;
+            border-radius: 50%;
+            border: 2px solid #6b6b6b;
+            object-fit: contain;
+            background: #fff;
+            }
+        }
+        .name{
+            display: inline;
+            white-space: nowrap;
+            a{
+            text-decoration:none;
+            color:$text-color;
+            font-weight: 550;
+            font-size: 1em;
+            }
+        }
+
+        p{
+            padding: 0.3em 0;
+        }
+
+        button{
+            padding: 0.5em 2em;
+        }
+
+        .logout{
+            background: red;
+            margin: 0.4em 0;
+            padding:0.4em 1.9em;
+        
+            a{
+            text-decoration: none;
+            color: $background-color;
+            
+            }
+        }
+
+    }
+}
