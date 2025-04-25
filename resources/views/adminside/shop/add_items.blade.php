@@ -13,7 +13,7 @@
         <div class="group">
             <div class="input_group">
                 <label for="item_name">Item Names</label>
-                <input type="text" name="item_name" id="item_name" placeholder="Enter item Name">
+                <input type="text" name="item_name" id="item_name" value="{{ old('item_name') }}" placeholder="Enter item Name">
             </div>
 
             <div class="input_group">
@@ -31,18 +31,13 @@
         <div class="group">
             <div class="input_group">
                 <label for="Price">Price</label>
-                <input type="number" name="price" id="price" placeholder="Enter the Price">
+                <input type="number" name="price" id="price" value="{{ old('price') }}" placeholder="Enter the Price">
             </div>
 
             <div class="input_group">
                 <label for="size">Size</label>
-                <input type="number" name="size" id="size" placeholder="Enter the size">
+                <input type="number" name="size" id="size" value="{{ old('size') }}" placeholder="Enter the size">
             </div>
-        </div>
-
-        <div class="input_group">
-            <label for="image">Product Image <strong>(Max is 2Mbs)</strong></label>
-            <input type="file" name="image"  id="image" accept="image/*" value="{{ old('image')}}" multiple>
         </div>
 
         <div class="group">
@@ -79,10 +74,15 @@
             </div>
         </div>
 
+        <div class="input_group">
+            <label for="image">Product Image <strong>(Max is 2Mbs)</strong></label>
+            <input type="file" name="image"  id="image" accept="image/*" value="{{ old('image')}}" multiple>
+        </div>
+
         <div class="input_content">
             <label for="description">Description</label>
-            <textarea name="description" id="descripton" cols="10" rows="7" placeholder="Enter the description">
-                
+            <textarea name="description" id="description" cols="7" rows="10" placeholder="Enter the description">{{ old('description') }}</textarea>
+                {{ old('description') }} 
             </textarea>
         </div>
 

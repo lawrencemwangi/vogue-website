@@ -33,7 +33,7 @@
                         <span class="user-col">{{ $item->size ?? 'N/A' }}</span>
                         <span class="user-col">{{ Illuminate\Support\str::limit($item->description,15)}}</span>
                         <span class="action">
-                            <a href="#">
+                            <a href="{{ route('shop.edit', ['shop' => $item]) }}">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
 

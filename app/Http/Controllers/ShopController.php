@@ -75,7 +75,8 @@ class ShopController extends Controller
      */
     public function edit(Shop $shop)
     {
-        //
+        $categories = Category::all();
+        return view('adminside.shop.update_items', compact('shop', 'categories'));
     }
 
     /**
@@ -83,7 +84,39 @@ class ShopController extends Controller
      */
     public function update(Request $request, Shop $shop)
     {
-        //
+        $validate_data = $request->validate([
+            'item_name' => 'required|string',
+            'category_id' => 'nullable',
+            'price' => 'required|numeric',
+            'image' => 'max:2048',
+            'visibility' => 'required|in:0,1',
+            'featured' => 'required|in:0,1'
+        ]);
+
+        $shop->item_name = $request->item_name;
+        $shop->category_id = $request->category_id;
+        $shop->price = $request->price;
+        $shop->description = $request->description;
+        $shop->featured = $request->featured;
+        $shop->visibility = $request->visibility;
+
+        if ($request->hasFile('image')) {
+            if ($shop->image && Storage::disk('public')->exists($shop->image)) {
+                Storage::disk('public')->delete($shop->image);
+            }
+        
+            $imageName = $shop->id . '.' . $request->file('image')->getClientOriginalExtension();
+            $path = $request->file('image')->storeAs('service', $imageName, 'public');
+            $shop->image = $path;
+            $validated['image'] = $path;
+        }
+
+        $shop->update();
+
+        return redirect()->route('shop.index')->with('success', [
+            'message' => 'Item updated successfully',
+            'duration' => $this->alert_message_duration,
+        ]);
     }
 
     /**
