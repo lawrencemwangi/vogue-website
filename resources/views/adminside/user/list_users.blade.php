@@ -24,7 +24,7 @@
                         </span>
                         
                         <span class="action">
-                            <a href="#">
+                            <a href="{{ route('users.edit', ['user' => $user]) }}">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                         </span>

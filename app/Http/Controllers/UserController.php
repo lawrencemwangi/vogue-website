@@ -43,17 +43,27 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        //
+        return view('adminside.user.update_user', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $validated = $request->validate([
+            'user_level' => 'required|in:1,2',
+            'status' => 'required|in:0,1',
+        ]);
+
+        $user->update($validated);
+
+        return redirect()->route('users.index')->with('success', [
+            'message' => 'User Updated Successfully',
+            'duration' => $this->alert_message_duration,
+        ]);
     }
 
     /**
