@@ -101,15 +101,19 @@ class ShopController extends Controller
         $shop->visibility = $request->visibility;
 
         if ($request->hasFile('image')) {
-            if ($shop->image && Storage::disk('public')->exists($shop->image)) {
-                Storage::disk('public')->delete($shop->image);
+            $image = $request->file('image');
+        
+            // Optional: delete old image if it exists
+            if ($shop->image && Storage::disk('public')->exists('service/' . $shop->image)) {
+                Storage::disk('public')->delete('service/' . $shop->image);
             }
         
-            $imageName = $shop->id . '.' . $request->file('image')->getClientOriginalExtension();
-            $path = $request->file('image')->storeAs('service', $imageName, 'public');
-            $shop->image = $path;
-            $validated['image'] = $path;
+            $imageName = $shop->item_name . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('service', $imageName, 'public');
+            
+            $shop->image = $imageName;
         }
+        
 
         $shop->update();
 

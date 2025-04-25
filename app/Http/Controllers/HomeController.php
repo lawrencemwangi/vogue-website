@@ -20,7 +20,11 @@ class HomeController extends Controller
 
     public function ShopPage()
     {
-        $Items = Shop::with('category')->get();
+        $Items = Shop::with('category')
+                    ->where('featured', 1)
+                    ->where('visibility', 1)
+                    ->get();
+        
         $categories = Category::orderBy('category', 'asc')->get();
 
         return view('shop', compact('Items', 'categories'));

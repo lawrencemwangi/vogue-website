@@ -12,7 +12,6 @@
                     @include('partials.list_items')
                 </div>
             @endif
-
         </div>
     </div>
     
