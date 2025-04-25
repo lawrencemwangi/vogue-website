@@ -62,7 +62,7 @@ class MessageController extends Controller
      */
     public function edit(Message $message)
     {
-        //
+        return view('adminside.messages.update_message', compact('message'));
     }
 
     /**
