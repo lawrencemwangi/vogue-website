@@ -97,15 +97,6 @@ html {
   font-size: 1em;
 }
 
-.message_container a {
-  text-decoration: none;
-  color: #001514;
-  background: #001514;
-  padding: 0.4em 1.2em;
-  color: #fbfffe;
-  border-radius: 4px;
-}
-
 .alert {
   padding: 1em;
   border-radius: 4px;
@@ -873,6 +864,14 @@ form .custom_radio_buttons label .option_radio:after {
   color: #fbfffe;
   font-weight: bold;
   border: none;
+}
+.contact_container .message_container a {
+  text-decoration: none;
+  color: #001514;
+  background: #001514;
+  padding: 0.4em 1.2em;
+  color: #fbfffe;
+  border-radius: 4px;
 }
 
 @media screen and (width <= 726px) {

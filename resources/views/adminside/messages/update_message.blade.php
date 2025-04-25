@@ -1,7 +1,7 @@
 <x-admin-layout>
     <h1>Message Reply</h1>
 
-    <div class="message_container">
+    <div class="contact_container">
         <ul>
             <ul>
                 <li> Client Names:- <span>{{ $message->names }}</span></li>
@@ -10,7 +10,9 @@
             </ul>
         </ul>
 
-        <a href="mailto:{{ $message->email }}" target="_blank">Reply the Message</a>
+        <div class="message_container">
+              <a href="mailto:{{ $message->email }}" target="_blank">Reply the Message</a>
+        </div>
     </div>
         
 </x-admin-layout>

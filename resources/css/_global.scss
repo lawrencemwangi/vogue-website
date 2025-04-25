@@ -108,13 +108,3 @@ html{
         }
     }
 }
-
-.message_container{
-    a{
-        @include anchor;
-        background:$text-color;
-        padding: 0.4em 1.2em;
-        color: $background-color;
-        border-radius: 4px;
-    }
-}
